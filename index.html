@@ -1,13 +1,20 @@
 <!DOCTYPE html> 
 <html ng-app="test">
 <head>
+<meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
 </head>
+
 <body>
+
+<div ng-controller = "WikiText as wiki">
+<h1>{{wiki.wikicontent.title}}</h1>
+<h3>{{wiki.wikicontent.description}}</h3>
+</div>
+
 <script type="text/javascript" src="angular.min.js"></script>
+<!--Including the Module - Test -->
 <script type="text/javascript" src="app.js"></script>
-<h1>{{"Hello" + " " + "World"}}</h1>
-<h1>{{"Nice" + " " + "to" + " " + "meet"+ " " +"you"}}</h1>
-<!--<button ng-show="test"> Add to Cart </button>-->
+
 </body>
 </html>
