@@ -1,11 +1,11 @@
 <!DOCTYPE html> 
-<html ng-app="test">
+<html ng-app="project1">
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
 </head>
 
-<body>
+<body ng-controller = "WikiText as mainWiki">
 
 <div>
 <ul class="nav nav-pills">
@@ -15,29 +15,20 @@
 </ul>
 </div>
 
-<div class = 'jumbotron'ng-controller = "WikiText as wiki">
-<h1>{{wiki.wikicontent.title}}</h1>
-<h3>{{wiki.wikicontent.description}}</h3>
+<div class = 'jumbotron' >
+<h1>{{mainWiki.wikicontent.title}}</h1>
+<h3>{{mainWiki.wikicontent.description}}</h3>
 </div>
 
 <div class="learn-more">
 	  <div class="container">
 		<div class = 'row'>
-	      <div class="col-md-4">
-			<h3>Travel</h3>
-			<p>From apartments and rooms to treehouses and boats: stay in unique spaces in 192 countries.</p>
-			<p><a href="#">See how to travel on Airbnb</a></p>
-	      </div>
-		  <div class="col-md-4">
-			<h3>Host</h3>
-			<p>Renting out your unused space could pay your bills or fund your next vacation.</p>
-			<p><a href="#">Learn more about hosting</a></p>
-		  </div>
-		  <div class="col-md-4">
-			<h3>Trust and Safety</h3>
-			<p>From Verified ID to our worldwide customer support team, we've got your back.</p>
-			<p><a href="#">Learn about trust at Airbnb</a></p>
-		  </div>
+			<div class="col-md-4" ng-repeat="wikiSubcontent in mainWiki.wikiSubcontents">
+				<h3>{{wikiSubcontent.title}}</h3>
+				<p>{{wikiSubcontent.paragraph}}</p>
+				<p><a href="#">{{wikiSubcontent.moreText}}</a></p>
+				<img ng-src='{{wikiSubcontent.image}}'>
+	       </div>
 	    </div>
 	  </div>
 	</div>
